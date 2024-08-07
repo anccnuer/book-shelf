@@ -1,0 +1,13 @@
+# The URL the site will be built for
+base_url = "https://zh.tutu.us.kg"
+title = "书箱"
+
+compile_sass = true
+
+build_search_index = false
+
+[markdown]
+highlight_code = false
+
+[extra]
+

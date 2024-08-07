@@ -1,0 +1,43 @@
+{% import "macros/list.html" as list -%}
+{% import "macros/sidebar.html" as side -%}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/icon.png">
+    <link rel="stylesheet" href="{{ get_url(path="main.css", trailing_slash=false) }}">
+    <title>
+        {{ config.title }}
+    </title>
+    <style>
+        #index {
+            color: #ff5857!important;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        {{ side::side() }}
+        <div id="list">
+            {% for page in paginator.pages | reverse %}
+                {{list::list(page=page)}}
+            {% endfor %}
+        </div>
+        <nav class="pagination">
+            {% if paginator.previous %}
+                <a href="{{ paginator.previous }}"><span>☚</span>上一页</a>
+            {% else %}
+                <a class="nopage" href="#"><span>☚</span>上一页</a>
+            {% endif %}
+            {% if paginator.next %}
+                <a href="{{ paginator.next }}">下一页<span>☛</span></a>
+            {% else %}
+                <a class="nopage" href="#">下一页<span>☛</span></a>
+            {% endif %}
+        </nav>
+    </main>
+</body>
+
+</html>

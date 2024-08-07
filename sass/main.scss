@@ -1,0 +1,94 @@
+main {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: 1fr 3rem;
+    gap: 0 5rem;
+    grid-template-areas:
+        "sidebar list"
+        "btm btm";
+}
+
+#side-bar {
+    margin: 2rem 0 0 2rem;
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        margin: 1rem 0;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.712);
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+}
+
+#list {
+    margin: 1rem;
+    max-width: 50rem;
+    grid-area: list;
+
+    a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.712);
+
+        &:hover {
+            text-shadow: 1px 1px 2px pink;
+        }
+    }
+}
+
+nav {
+    grid-area: btm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        margin: 0 1rem;
+        color: rgba(0, 0, 0, 0.712);
+        // text-decoration: rgba(5, 240, 228, 0.548) underline wavy;
+        text-decoration: none;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+
+    .nopage {
+        margin: 0 1rem;
+        color: gray;
+        text-decoration: none;
+        pointer-events: none;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+#logo {
+    width: 8rem;
+    height: auto;
+    margin: 0 2rem;
+}
+
+#link {
+    div {
+        padding-bottom: 0.8rem;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.418);
+
+        &::after {
+            content: "[阅读全文]";
+        }
+    }
+
+    div {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; /* 限制在3行内 */
+        overflow: hidden; /* 隐藏溢出的内容 */
+        text-overflow: ellipsis; /* 显示省略号 */
+    }
+}

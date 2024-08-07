@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import "macros/control.html" as ctrl -%}
+
+{% block content %}
+<div id="content">
+    {{ page.content | safe}}
+    {{ ctrl::ctrl(page=page) }}
+</div>
+
+<a href="#" onclick="history.back();">
+    <div id="back">
+        返回
+    </div>
+</a>
+
+<a href="" onclick="setScrollTop()">
+    <div id="totop">
+        <img src="/top.png" alt="">
+    </div>
+</a>
+
+{% endblock content %}

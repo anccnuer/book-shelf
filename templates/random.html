@@ -1,0 +1,67 @@
+{% import "macros/sidebar.html" as side -%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/icon.png">
+    <script src="{{ get_url(path="random.js", trailing_slash=false) }}"></script>
+    <link rel="stylesheet" href="{{ get_url(path="main.css", trailing_slash=false) }}">
+    <title>
+        {{ config.title }}
+    </title>
+    <style>
+        #random {
+            color: #ff5857!important;
+        }
+        #renew {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(202, 15, 15, 0.548);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 2rem;
+            right: 10vw;
+            border-radius: 0.5rem;
+
+            img {
+                width: 25px;
+                height: auto;
+            }
+        }
+        #loading {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            opacity: 0.8;
+            width: 5rem;
+            height: auto;
+            animation: rotate 2s linear infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+   
+    <main>
+        {{ side::side() }}
+        <div id="list">
+        </div>
+        <div id="renew" onclick="get_data()">
+            <img src="/renew.png" alt="">
+        </div>
+    </main>
+</body>
+
+</html>

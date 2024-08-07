@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ get_url(path="page.css", trailing_slash=false) }}">
+    <script src="{{ get_url(path="main.js", trailing_slash=false) }}"></script>
+    <link rel="shortcut icon" href="/icon.png">
+    <title>
+        {{ config.title }}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

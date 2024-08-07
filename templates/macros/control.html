@@ -1,0 +1,18 @@
+{% macro ctrl(page) %}
+<div id="control">
+    {% if page.lower %}
+    <a href="{{page.lower.permalink | safe}}"><span>☚</span></a>
+    {% else %}
+    <span>上一页</span>
+
+    {% endif %}
+
+    <a href="/" id="back_to_mulu">返回主页</a>
+
+    {% if page.higher %}
+    <a href="{{page.higher.permalink | safe}}"><span>☛</span></a>
+    {% else %}
+    <span>上一页</span>
+    {% endif %}
+</div>
+{% endmacro ctrl %}

@@ -1,0 +1,9 @@
+{% macro list(page) %}
+<a id="link" href="{{ page.permalink }}">
+    <h1>
+        {{ page.title | safe }}
+    </h1>
+    <div>{{ page.description | safe }}</div>
+</a>
+
+{% endmacro list %}
